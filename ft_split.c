@@ -36,8 +36,7 @@ int	free_word(size_t i, char **str_arr)
 {
 	while (i--)
 		free(str_arr[i]);
-	free(str_arr);
-	return (0);
+	return (free(str_arr), 0);
 }
 
 char	**return_arr(const char *s, char **str_arr, char c, char *word)
@@ -65,8 +64,7 @@ char	**return_arr(const char *s, char **str_arr, char c, char *word)
 		if (s[start])
 			start++;
 	}
-	str_arr[i] = 0;
-	return (str_arr);
+	return (str_arr[i] = 0, str_arr);
 }
 
 char	**ft_split(const char *s, char c)
