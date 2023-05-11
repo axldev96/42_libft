@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 18:03:23 by acaceres          #+#    #+#             */
-/*   Updated: 2023/04/05 12:34:45 by acaceres         ###   ########.fr       */
+/*   Updated: 2023/04/23 21:29:06 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		new_str[i++] = *s1++;
 	while (*s2)
 		new_str[i++] = *s2++;
-	new_str[i] = '\0';
-	return (new_str);
+	return (new_str[i] = '\0', new_str);
 }

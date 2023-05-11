@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 20:06:23 by acaceres          #+#    #+#             */
-/*   Updated: 2023/04/25 05:56:36 by acaceres         ###   ########.fr       */
+/*   Created: 2023/05/02 07:29:08 by acaceres          #+#    #+#             */
+/*   Updated: 2023/05/02 07:31:39 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	s_chars(char c)
+void	ft_lstprint(t_list *node)
 {
-	return (c == ' '
-		|| c == '\n'
-		|| c == '\f'
-		|| c == '\t'
-		|| c == '\r'
-		|| c == '\v');
-}
-
-int	ft_atoi(const char *str)
-{
-	int		result;
-	char	sign;
-
-	result = 0;
-	sign = 1;
-	while (s_chars(*str))
-		str++;
-	if (*str == '-' || *str == '+')
-		if (*str++ == '-')
-			sign = sign * -1;
-	while (ft_isdigit(*str))
-		result = result * 10 + *str++ - '0';
-	return (result * sign);
+	if (!node)
+		write(1, "Node doesn't exist", 18);
+	while (node)
+	{
+		while (*(char *)node->content)
+			write(1, (char *)node->content++, 1);
+		node = node->next;
+	}
 }
