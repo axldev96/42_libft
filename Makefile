@@ -6,7 +6,7 @@
 #    By: acaceres <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/01 07:08:03 by acaceres          #+#    #+#              #
-#    Updated: 2023/04/01 07:08:05 by acaceres         ###   ########.fr        #
+#    Updated: 2023/06/21 08:22:59 by acaceres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,8 @@ SRCS = ft_memset.c					\
 		ft_putchar_fd.c				\
 		ft_putstr_fd.c				\
 		ft_putendl_fd.c				\
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c				\
+		ft_atol.c
 
 ### DEFINE BONUS FILES ###
 SRCSB =	ft_lstnew_bonus.c			\

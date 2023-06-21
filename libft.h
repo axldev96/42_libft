@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 00:23:46 by acaceres          #+#    #+#             */
-/*   Updated: 2023/03/13 17:09:09 by acaceres         ###   ########.fr       */
+/*   Updated: 2023/06/21 08:22:43 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
 int					ft_atoi(const char *str);
+unsigned long		ft_atol(const char *str);
 
 // MALLOC IMPLEMENTATIONS
 void				*ft_calloc(size_t count, size_t size);

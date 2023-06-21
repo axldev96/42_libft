@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 03:42:55 by acaceres          #+#    #+#             */
-/*   Updated: 2023/03/19 03:44:34 by acaceres         ###   ########.fr       */
+/*   Updated: 2023/06/20 12:26:43 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,14 @@ char	**return_arr(const char *s, char **str_arr, char c, char *word)
 char	**ft_split(const char *s, char c)
 {
 	char	**str_arr;
-	char	*word;
 
-	word = 0;
 	str_arr = 0;
 	if (!s)
 		return (0);
 	str_arr = (char **) malloc ((count_word(s, c) + 1) * sizeof (char *));
 	if (!str_arr)
 		return (0);
-	return (return_arr(s, str_arr, c, word));
+	return (return_arr(s, str_arr, c, NULL));
 }
 
 /* int main(void) */
