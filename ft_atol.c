@@ -22,10 +22,10 @@ int	s_chars(char c)
 		|| c == '\v');
 }
 
-unsigned long	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
-	unsigned long	result;
-	char			sign;
+	long	result;
+	char	sign;
 
 	result = 0;
 	sign = 1;
