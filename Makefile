@@ -46,7 +46,9 @@ SRCS = ft_memset.c					\
 		ft_putstr_fd.c				\
 		ft_putendl_fd.c				\
 		ft_putnbr_fd.c				\
-		ft_atol.c
+		ft_atol.c					\
+		ft_free_args.c
+		
 
 ### DEFINE BONUS FILES ###
 SRCSB =	ft_lstnew_bonus.c			\

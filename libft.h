@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 00:23:46 by acaceres          #+#    #+#             */
-/*   Updated: 2023/06/24 14:18:45 by acaceres         ###   ########.fr       */
+/*   Updated: 2023/06/28 22:04:38 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
 
 // Define structs for linked list bonus
 typedef struct s_list
@@ -77,6 +78,8 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
-int	ft_putchar(char c);
-int	ft_putstr(char *str);
+int					ft_putchar(char c);
+int					ft_putstr(char *str);
+void				ft_free_args(int argc, ...);
+
 #endif
