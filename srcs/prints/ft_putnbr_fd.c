@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 17:23:30 by acaceres          #+#    #+#             */
-/*   Updated: 2023/10/29 05:54:41 by acaceres         ###   ########.fr       */
+/*   Updated: 2023/10/29 10:07:31 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putnbr_fd(int n, int fd)
 		n = n * -1;
 		n = (unsigned int)n;
 		ft_putchar_fd('-', fd);
-			return ;
+		return ;
 	}
 	if (n / 10 == 0)
 	{
