@@ -6,11 +6,11 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 00:07:58 by acaceres          #+#    #+#             */
-/*   Updated: 2023/10/29 09:42:53 by acaceres         ###   ########.fr       */
+/*   Updated: 2023/11/01 10:27:56 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 size_t	ft_strlen_printf(const char *str)
 {
@@ -28,7 +28,7 @@ int	ft_putnbr_printf(int n, int count, int re)
 		return (write(1, "-2147483648", 11));
 	if (n < 0)
 	{
-		if (ft_putchar('-') == -1)
+		if (ft_putchar_printf('-') == -1)
 			return (-1);
 		count++;
 		n *= -1;
@@ -36,13 +36,13 @@ int	ft_putnbr_printf(int n, int count, int re)
 	if (n >= 10)
 	{
 		count += ft_putnbr_printf(n / 10, 0, re);
-		if (count == -1 || ft_putchar(n % 10 + '0') == -1)
+		if (count == -1 || ft_putchar_printf(n % 10 + '0') == -1)
 			return (-1);
 		count++;
 	}
 	else
 	{
-		if (ft_putchar(n + '0') == -1)
+		if (ft_putchar_printf(n + '0') == -1)
 			return (-1);
 		count++;
 	}
@@ -64,14 +64,14 @@ int	ft_putnbr_base(unsigned long n, char *base)
 		if (re == -1)
 			return (-1);
 		count += re;
-		re = ft_putchar(base[n % base_len]);
+		re = ft_putchar_printf(base[n % base_len]);
 		if (re == -1)
 			return (-1);
 		count += re;
 	}
 	else
 	{
-		if (ft_putchar(base[n % base_len]) == -1)
+		if (ft_putchar_printf(base[n % base_len]) == -1)
 			return (-1);
 		count++;
 	}
@@ -108,14 +108,14 @@ int	ft_putunsig_printf(unsigned int n)
 		if (re == -1)
 			return (-1);
 		count += re;
-		re = ft_putchar(n % 10 + '0');
+		re = ft_putchar_printf(n % 10 + '0');
 		if (re == -1)
 			return (-1);
 		count += re;
 	}
 	else
 	{
-		re = ft_putchar(n + '0');
+		re = ft_putchar_printf(n + '0');
 		if (re == -1)
 			return (-1);
 		count += re;

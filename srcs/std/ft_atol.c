@@ -6,13 +6,13 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 08:18:25 by acaceres          #+#    #+#             */
-/*   Updated: 2023/06/21 08:19:53 by acaceres         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:53:36 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	s_chars(char c)
+static int	s_chars(char c)
 {
 	return (c == ' '
 		|| c == '\n'

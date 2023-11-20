@@ -6,7 +6,7 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 00:23:46 by acaceres          #+#    #+#             */
-/*   Updated: 2023/11/06 04:22:36 by acaceres         ###   ########.fr       */
+/*   Updated: 2023/11/13 07:34:04 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-# include "../ft_printf/includes/ft_printf.h"
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 100
+#  define BUFFER_SIZE 3
 # endif
 
 // Define structs for linked list bonus
@@ -83,11 +82,23 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
+// FT_PRINTF
+
+int					ft_putstr_printf(char *s);
+int					ft_putchar_printf(char c);
+int					ft_putunsig_printf(unsigned int n);
+int					ft_putptr_printf(void *ptr);
+int					ft_putnbr_base(unsigned long n, char *base);
+int					ft_putnbr_printf(int n, int count, int re);
+size_t				ft_strlen_printf(const char *str);
+int					ft_printf(char const *str, ...);
+
 // GET_NEXT_LINE
 char				*get_next_line(int fd);
 
 // Extra
 void				ft_free_2d_arr(void	***ptr);
+void				ft_free_3d_arr(void ****ptr);
 void				ft_free_args(size_t argc, ...);
 void				ft_free(void **ptr);
 

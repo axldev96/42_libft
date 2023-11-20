@@ -6,11 +6,11 @@
 /*   By: acaceres <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:08:56 by acaceres          #+#    #+#             */
-/*   Updated: 2023/09/12 08:52:51 by acaceres         ###   ########.fr       */
+/*   Updated: 2023/11/01 10:27:20 by acaceres         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	ft_check_flag(const char *str, int i, va_list args);
 static int	ft_iterate(const char *str, int re, int count, va_list args);
@@ -49,7 +49,7 @@ static int	ft_iterate(const char *str, int re, int count, va_list args)
 		}
 		if (str[i] != '%' && str[i] != '\0')
 		{
-			if (ft_putchar(str[i]) == -1)
+			if (ft_putchar_printf(str[i]) == -1)
 				return (-1);
 			count++;
 			i++;
@@ -64,7 +64,7 @@ static int	ft_check_flag(const char *str, int i, va_list args)
 
 	re = 0;
 	if (str[i] == 'c')
-		re = ft_putchar(va_arg(args, int));
+		re = ft_putchar_printf(va_arg(args, int));
 	else if (str[i] == 's')
 		re = ft_putstr_printf(va_arg(args, char *));
 	else if (str[i] == 'p')
@@ -78,13 +78,13 @@ static int	ft_check_flag(const char *str, int i, va_list args)
 	else if (str[i] == 'X')
 		re = ft_putnbr_base(va_arg(args, unsigned int), "0123456789ABCDEF");
 	else if (str[i] == '%')
-		re = ft_putchar('%');
+		re = ft_putchar_printf('%');
 	if (re == -1)
 		return (-1);
 	return (re);
 }
 
-int	ft_putchar(char c)
+int	ft_putchar_printf(char c)
 {
 	return (write(1, &c, 1));
 }
@@ -105,7 +105,7 @@ int	ft_putstr_printf(char *s)
 	}
 	while (*s)
 	{
-		re = ft_putchar(*s++);
+		re = ft_putchar_printf(*s++);
 		if (re == -1)
 			return (-1);
 		count += re;

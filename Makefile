@@ -6,7 +6,7 @@
 #    By: acaceres <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/01 07:08:03 by acaceres          #+#    #+#              #
-#    Updated: 2023/11/06 04:24:30 by acaceres         ###   ########.fr        #
+#    Updated: 2023/11/20 01:40:11 by acaceres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS =	srcs/chars/ft_isalnum.c \
 	srcs/malloc/ft_bzero.c \
 	srcs/malloc/ft_calloc.c \
 	srcs/malloc/ft_free_2d_arr.c \
+	srcs/malloc/ft_free_3d_arr.c \
 	srcs/malloc/ft_free_args.c \
 	srcs/malloc/ft_free.c \
 	srcs/memory/ft_memchr.c \
@@ -49,7 +50,9 @@ SRCS =	srcs/chars/ft_isalnum.c \
 	srcs/strings/ft_strrchr.c \
 	srcs/strings/ft_strtrim.c \
 	srcs/strings/ft_substr.c \
-	srcs/get_next_line/get_next_line.c
+	srcs/get_next_line/get_next_line.c \
+	srcs/ft_printf/ft_printf_utils.c \
+	srcs/ft_printf/ft_printf.c \
 
 ### BONUS FILES ###
 SRCSB =	srcs/linked_list/ft_lstnew_bonus.c \
@@ -72,12 +75,9 @@ TARGET = all
 OBJS = $(SRCS:.c=.o)
 OBJSB = $(SRCSB:.c=.o)
 
-FT_PRINTF_DIR = ft_printf
-FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
-
 CC = gcc
 C_FLAGS = -Wall -Wextra -Werror
-INC = -I includes
+INC = -I ./
 AR = ar
 AR_FLAGS = -rcs
 RM = rm -rf
@@ -85,11 +85,8 @@ RM = rm -rf
 %.o: %.c
 	$(CC) $(INC) $(C_FLAGS) -c $< -o $@
 
-$(NAME): $(OBJS) $(FT_PRINTF)
-	$(AR) $(AR_FLAGS) $(NAME) $(FT_PRINTF) $(OBJS)
-
-$(FT_PRINTF):
-	$(MAKE) -sC $(FT_PRINTF_DIR)
+$(NAME): $(OBJS)
+	$(AR) $(AR_FLAGS) $(NAME) $(OBJS)
 
 bonus: $(OBJS) $(OBJSB)
 	$(AR) $(AR_FLAGS) $(NAME) $(OBJS) $(OBJSB)
@@ -101,10 +98,9 @@ re: fclean
 
 clean:
 	$(RM) $(OBJS)
-	$(MAKE) clean -C $(FT_PRINTF_DIR)
+	$(RM) $(OBJSB)
 
 fclean: clean
 	$(RM) $(NAME)
-	$(MAKE) fclean -C $(FT_PRINTF_DIR)
 
 .PHONY: all clean fclean re bonus
