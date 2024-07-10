@@ -6,7 +6,7 @@
 #    By: acaceres <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/01 07:08:03 by acaceres          #+#    #+#              #
-#    Updated: 2023/11/20 01:40:11 by acaceres         ###   ########.fr        #
+#    Updated: 2024/07/10 12:36:46 by acaceres         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ OBJSB = $(SRCSB:.c=.o)
 
 CC = gcc
 C_FLAGS = -Wall -Wextra -Werror
-INC = -I ./
+INC = -I ./includes
 AR = ar
 AR_FLAGS = -rcs
 RM = rm -rf
